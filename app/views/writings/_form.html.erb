@@ -1,0 +1,17 @@
+<%= simple_form_for(@writing) do |f| %>
+  <% if !@writing.errors.empty? %>
+    <div class="alert alert-error">
+      <ul>
+        <% @writing.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="well">
+    <%= f.input :name %>
+    <%= f.file_field :document %>
+    <%= f.submit "Save", class: "btn btn-primary" %>
+  </div>
+<% end %>
