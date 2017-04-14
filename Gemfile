@@ -10,6 +10,14 @@ gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+# Use bootstrap 4
+gem 'bootstrap', '~> 4.0.0.alpha6'
+#us SimpleForms
+gem 'simple_form'
+# For using tooltips
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.3.3'
+end
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -30,7 +38,6 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'twitter-bootstrap-rails'
 gem 'simple_form'
 gem 'devise'
 gem 'carrierwave', '~> 1.0'
