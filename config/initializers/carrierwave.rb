@@ -1,5 +1,4 @@
 # config/initializers/carrierwave.rb
-unless ENV['AWS_ACCESS_KEY_ID'].blank?
 CarrierWave.configure do |config|
   config.fog_credentials = {
     # Configuration for Amazon S3 should be made available through an Environment variable.
@@ -30,5 +29,4 @@ CarrierWave.configure do |config|
     config.storage = :fog
   end              # To let CarrierWave work on heroku
 
-end
 end
