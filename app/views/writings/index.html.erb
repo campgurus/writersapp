@@ -3,10 +3,9 @@
   <%= flash[:notice] %>
   </div>
 <% end %>
-<br />
-<%= link_to "New Writing", new_writing_path, class: "btn btn-primary" %>
-<br />
-<br />
+
+<h2>Uploaded Writings</h2>
+
 <table class="table table-bordered table-striped">
   <thead>
     <tr>
@@ -25,3 +24,7 @@
     <% end %>
   </tbody>
 </table>
+
+<br />
+<%= link_to "New Writing", new_writing_path, class: "btn btn-primary" %>
+<br />
