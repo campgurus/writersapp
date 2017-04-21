@@ -1,7 +1,9 @@
-<% @doc.paragraphs.each do |p| %>
-  <% if !p.nil? %>
-	<%= raw(p.to_html) %>
-  <% end %>
+<!-- reject method removes nil as well as empty strings-->
+<% @doc.paragraphs.reject(&:blank?).each do |p| %>
+	<%= a=raw(p.to_html) %>
+	<% if !strip_tags(a).empty? %>
+		<%= link_to "Comment", '#' %>
+	<% end %>
 <% end %>
 <%= link_to 'Edit', edit_writing_path(@writing) %> |
 <%= link_to 'Back', writings_path %>
