@@ -1,2 +1,5 @@
+<% @doc.paragraphs.each do |p| %>
+	<%= p.to_html %>
+<% end %>
 <%= link_to 'Edit', edit_writing_path(@writing) %> |
 <%= link_to 'Back', writings_path %>

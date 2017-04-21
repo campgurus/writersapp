@@ -18,7 +18,7 @@
     <% @writings.each do |writing| %>
       <tr>
         <td><%= writing.name %></td>
-        <td><%= link_to "Download Writing", writing.document_url %></td>
+        <td><%= link_to "Review This", writing_path(writing) %></td>
         <td><%= button_to "Delete",  writing, method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{writing.name}?" %></td>
       </tr>
     <% end %>

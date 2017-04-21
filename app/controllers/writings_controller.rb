@@ -10,6 +10,8 @@ class WritingsController < ApplicationController
   # GET /writings/1
   # GET /writings/1.json
   def show
+    @url = @writing.document.url
+    @doc = Docx::Document.open(open(@url).path)
   end
 
   # GET /writings/new
