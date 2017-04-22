@@ -3,7 +3,9 @@
 	<%= a=raw(p.to_html) %>
 	<% if !strip_tags(a).empty? %>
 		<%= link_to '#' do %>
-		  <%= fa_icon "comment" %>
+			<span data-toggle="tooltip" data-placement="top" title="Add Comment">
+			  <%= fa_icon "comment" %>
+			</span>
 		<% end %>
 	<% end %>
 <% end %>
