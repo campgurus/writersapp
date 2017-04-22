@@ -1,8 +1,10 @@
 <!-- reject method removes nil as well as empty strings-->
-<% @doc.paragraphs.reject(&:blank?).each do |p| %>
+<% @doc.paragraphs.compact.each do |p| %>
 	<%= a=raw(p.to_html) %>
 	<% if !strip_tags(a).empty? %>
-		<%= link_to "Comment", '#' %>
+		<%= link_to '#' do %>
+		  <%= fa_icon "comment" %>
+		<% end %>
 	<% end %>
 <% end %>
 <%= link_to 'Edit', edit_writing_path(@writing) %> |
