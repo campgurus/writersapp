@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   root to: 'writings#index'
   resources :writings
 
+  get "comments/new_comment" => 'comments#new_comment', :as => :new_comment
+
 
 end
