@@ -6,4 +6,16 @@ class Writing < ApplicationRecord
 
   has_many :paragraphs  
   has_many :comments, through: :paragraphs
+  
+  after_save :create_paragraphs #what if article is edted and a new document added?
+
+  protected
+    def create_paragraphs
+    	url = self.document.url
+	    doc = Docx::Document.open(open(url).path)
+
+	    doc.paragraphs.compact.each_with_index do |p, i|
+	    	Paragraph.create(:writing_id => self.id, :par_num => i, :body => p.to_html)
+	    end
+    end
 end
