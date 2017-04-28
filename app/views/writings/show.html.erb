@@ -2,7 +2,7 @@
 <% @doc.paragraphs.compact.each do |p| %>
 	<%= a=raw(p.to_html) %>
 	<% if !strip_tags(a).empty? %>
-		<%= link_to new_comment_path, {:remote => true, 'data-toggle' => "modal", 'data-target' => '#modal-window'} do %>
+		<%= link_to new_writing_paragraph_comment_path (@writing, p) do %>
 			<span data-toggle="tooltip" data-placement="top" title="Add Comment">
 			  <%= fa_icon "comment" %>
 			</span>
