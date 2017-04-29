@@ -71,6 +71,6 @@ class ParagraphsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def paragraph_params
-      params.fetch(:paragraph, {}).permit(comments_attributes: [:comment, :body, :commentable_id, :commentable_type]
+      params.fetch(:paragraph, {}).permit(comments_attributes: [:comment, :body, :commentable_id, :commentable_type])
     end
 end
