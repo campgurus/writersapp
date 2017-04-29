@@ -1,6 +1,4 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Comments on Paragraph #<%= @comments.first.commentable_id %>:</h1>
+<h3 class="text-center">Paragraph #<%= @comments.first.commentable_id %>:</h3>
 
 <blockquote class="">
   <%= raw Paragraph.find(@comments.first.commentable_id).body  %>
