@@ -11,7 +11,6 @@ class ParagraphsController < ApplicationController
   # GET /paragraphs/1.json
   def show
     @writing = Writing.find(params[:id])
-    @
   end
 
   # GET /paragraphs/new
