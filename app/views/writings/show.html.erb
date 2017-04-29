@@ -1,7 +1,7 @@
 <!-- reject method removes nil as well as empty strings-->
 <% @writing.paragraphs.compact.each do |p| %>
 	<%= raw p.body %>
-	<% if !p.body.empty? %>
+	<% if !strip_tags(p.body).empty? %>
 		<%= link_to new_paragraph_comment_path (p) do %>
 			<span data-toggle="tooltip" data-placement="top" title="Add Comment">
 			  <%= fa_icon "comment" %>
