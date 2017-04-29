@@ -2,15 +2,37 @@
 
 <h1>Comments on Paragraph #<%= @comments.first.commentable_id %>:</h1>
 
-<h4><%= raw Paragraph.find(@comments.first.commentable_id).body  %></h4>
+<blockquote class="">
+  <%= raw Paragraph.find(@comments.first.commentable_id).body  %>
+</blockquote>
 
-<table>
+<table class="table table-bordered table-striped">
   <thead>
     <tr>
-      <th colspan="3"></th>
+      <th>Date</th>
+      <th>User</th>
+      <th>Comment</th>
+      <th>Actions</th>
     </tr>
   </thead>
-
+  <tbody>
+    <% @comments.each do |comment| %>
+      <tr>
+        <td><%= comment.created_at.strftime("%d %b %Y %l:%M %p") %></td>
+        <td>
+          <% if comment.user_id %>
+            <%= link_to User.find(comment.user_id).username, '#' %>
+          <% end %>
+        </td>
+        <td><%= comment.body %></td>
+        <td>
+          <% if comment.user_id %>
+            <%#= link_to User.find(comment.user_id).username, '#' %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 
 </table>
 
