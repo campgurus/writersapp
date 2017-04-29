@@ -10,6 +10,8 @@ class ParagraphsController < ApplicationController
   # GET /paragraphs/1
   # GET /paragraphs/1.json
   def show
+    @writing = Writing.find(params[:id])
+    @
   end
 
   # GET /paragraphs/new
@@ -69,6 +71,6 @@ class ParagraphsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def paragraph_params
-      params.fetch(:paragraph, {})
+      params.fetch(:paragraph, {}).permit(comments_attributes: [:comment, :body, :commentable_id, :commentable_type])
     end
 end

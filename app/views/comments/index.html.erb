@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Comments</h1>
+<h1>Comments on Paragraph #<%= @comments.first.commentable_id %>:</h1>
+
+<h4><%= raw Paragraph.find(@comments.first.commentable_id).body  %></h4>
 
 <table>
   <thead>
@@ -9,17 +11,7 @@
     </tr>
   </thead>
 
-  <tbody>
-    <% @comments.each do |comment| %>
-      <tr>
-        <td><%= link_to 'Show', comment %></td>
-        <td><%= link_to 'Edit', edit_comment_path(comment) %></td>
-        <td><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+
 </table>
 
 <br>
-
-<%= link_to 'New Comment', new_comment_path %>
