@@ -19,7 +19,7 @@
         <td><%= comment.created_at.strftime("%d %b %Y %l:%M %p") %></td>
         <td>
           <% if comment.user_id %>
-            <%= link_to User.find(comment.user_id).username, '#' %>
+            <%= link_to User.find(comment.user_id).id, '#' %>
           <% end %>
         </td>
         <td><%= comment.body %></td>

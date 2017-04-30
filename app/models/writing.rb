@@ -6,6 +6,8 @@ class Writing < ApplicationRecord
 
   has_many :paragraphs  
   has_many :comments, through: :paragraphs
+
+  belongs_to :user
   
   after_save :create_paragraphs #what if article is edted and a new document added?
 

@@ -34,6 +34,7 @@ class CommentsController < ApplicationController
   # POST /comments.json
   def create
     @comment = @commentable.comments.new(comment_params)
+    @comment.user = current_user
 
     respond_to do |format|
       if @comment.save
