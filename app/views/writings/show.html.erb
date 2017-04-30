@@ -8,6 +8,9 @@
 				  <%= fa_icon "comment" %>
 				</span>
 			<% end %>
+			<% if !p.comments.empty? %>
+			  <%= link_to p.comments.count, paragraph_comments_path(p), class: "badge badge-danger" %> 
+			<% end %>
 		<% end %>
 	</p>
 <% end %>
