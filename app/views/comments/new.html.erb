@@ -1,4 +1,8 @@
-<h1>New Comment</h1>
+<h3 class="text-center">New Comment on Paragraph #<%= @commentable.id %>:</h3>
+
+<blockquote class="">
+  <%= raw Paragraph.find(@commentable.id).body  %>
+</blockquote>
 
 <%= render 'form', comment: @comment %>
 
