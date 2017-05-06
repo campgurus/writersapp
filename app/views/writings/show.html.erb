@@ -1,11 +1,11 @@
 <!-- reject method removes nil as well as empty strings-->
 <% @writing.paragraphs.compact.each do |p| %>
 	<p>
-	    <%= raw strip_tags(p.body) %>
+	    <%= raw sanitize p.body, tags: %w(strong em b i style) %>
 	    <% if !strip_tags(p.body).empty? %>
 			<%= link_to new_paragraph_comment_path (p) do %>
 				<span data-toggle="tooltip" data-placement="top" title="Add Comment">
-				  <%= fa_icon "comment" %>
+				  <%= fa_icon "comment-o" %>
 				</span>
 			<% end %>
 			<% if !p.comments.empty? %>
