@@ -11,6 +11,9 @@ class Writing < ApplicationRecord
   
   after_save :create_paragraphs #what if article is edted and a new document added?
 
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+
   protected
     def create_paragraphs
     	url = self.document.url
